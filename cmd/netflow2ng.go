@@ -53,12 +53,12 @@ func (a *Address) Value() (string, int) {
 }
 
 type CLI struct {
-	Listen Address `kong:"short='a',help='NetFlow/IPFIX listen address:port',default='0.0.0.0:2055'"`
+	Listen Address `kong:"short='a',help='NetFlow/IPFIX listen address:port',default='0.0.0.0:9555'"`
 	Reuse  bool    `kong:"help='Enable SO_REUSEPORT for NetFlow/IPFIX listen port'"`
 
-	Metrics Address `kong:"short='m',help='Metrics listen address',default='0.0.0.0:8080'"`
+	Metrics Address `kong:"short='m',help='Metrics listen address',default='0.0.0.0:8008'"`
 
-	ListenZmq string   `kong:"short='z',help='proto://IP:Port to listen on for ZMQ connections',default='tcp://*:5556'"`
+	ListenZmq string   `kong:"short='z',help='proto://IP:Port to listen on for ZMQ connections',default='tcp://*:5566'"`
 	Topic     string   `kong:"help='ZMQ Topic',default='flow'"`
 	SourceId  SourceId `kong:"help='NetFlow SourceId (0-255)',default=0"`
 	Compress  bool     `kong:"help='Compress ZMQ JSON data',xor='zmq-data'"`
